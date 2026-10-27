@@ -1,0 +1,91 @@
+# Golden FAQ for the fictional Lumen Notes product.
+# Same cases as datasets/rag_faq.jsonl. Strings are quoted so times
+# such as 09:00 stay strings under YAML 1.1.
+cases:
+  - id: "password-reset"
+    question: "How do I reset my password?"
+    expected_answer: "Password reset links expire after 30 minutes. Request a new link from the sign-in page."
+    expected_facts:
+      - "Password reset links expire after 30 minutes."
+    context:
+      - "Password reset links expire after 30 minutes."
+      - "Request a new link from the sign-in page."
+    recorded_answer: "Password reset links expire after 30 minutes. Request a new link from the sign-in page."
+    tags:
+      - "account"
+  - id: "free-plan"
+    question: "What does the Free plan include?"
+    expected_answer: "The Free plan includes 3 notebooks and 50 MB of attachments."
+    expected_facts:
+      - "The Free plan includes 3 notebooks and 50 MB of attachments."
+    context:
+      - "The Free plan includes 3 notebooks and 50 MB of attachments."
+    recorded_answer: "The Free plan comes with 3 notebooks and 50 MB of attachments."
+    tags:
+      - "billing"
+  - id: "sso"
+    question: "Which plans include SSO?"
+    expected_answer: "SAML SSO is available on the Team plan. OIDC is available on the Enterprise plan."
+    expected_facts:
+      - "SAML SSO is available on the Team plan."
+      - "OIDC is available on the Enterprise plan."
+    context:
+      - "SAML SSO is available on the Team plan."
+      - "OIDC is available on the Enterprise plan."
+    recorded_answer: "SAML SSO is available on the Team plan. OIDC is available on the Enterprise plan."
+    tags:
+      - "security"
+  - id: "export"
+    question: "How do I export my notes?"
+    expected_answer: "Open Settings, choose Export, and download a ZIP of markdown files. Exports are ready within 1 hour."
+    expected_facts:
+      - "Exports are ready within 1 hour."
+    context:
+      - "Open Settings, choose Export, and download a ZIP of markdown files."
+      - "Exports are ready within 1 hour."
+    recorded_answer: "Open Settings, choose Export, and download a ZIP of markdown files. Exports are ready within 1 hour."
+    tags:
+      - "data"
+  - id: "support-hours"
+    question: "When is email support available?"
+    expected_answer: "Email support runs Monday to Friday, 09:00 to 17:00 UTC. Enterprise customers also get weekend chat."
+    expected_facts:
+      - "Email support runs Monday to Friday, 09:00 to 17:00 UTC."
+    context:
+      - "Email support runs Monday to Friday, 09:00 to 17:00 UTC."
+      - "Enterprise customers also get weekend chat."
+    recorded_answer: "Email support runs Monday to Friday, 09:00 to 17:00 UTC. Enterprise customers also get weekend chat."
+    tags:
+      - "support"
+  - id: "trash"
+    question: "How long are deleted notes recoverable?"
+    expected_answer: "Deleted notes stay in Trash for 14 days."
+    expected_facts:
+      - "Deleted notes stay in Trash for 14 days."
+    context:
+      - "Deleted notes stay in Trash for 14 days and are then permanently removed."
+    recorded_answer: "Deleted notes stay in Trash for 14 days."
+    tags:
+      - "data"
+  - id: "rate-limit"
+    question: "What is the API rate limit?"
+    expected_answer: "The public API allows 60 requests per minute per token. Burst traffic may receive HTTP 429."
+    expected_facts:
+      - "The public API allows 60 requests per minute per token."
+    context:
+      - "The public API allows 60 requests per minute per token."
+      - "Burst traffic may receive HTTP 429."
+    recorded_answer: "The public API allows 60 requests per minute per token. Burst traffic may receive HTTP 429."
+    tags:
+      - "api"
+  - id: "storage-region"
+    question: "Where is my data stored?"
+    expected_facts:
+      - "Primary storage is in the eu-central region."
+      - "Backups stay in the EU."
+    context:
+      - "Primary storage is in the eu-central region."
+      - "Backups stay in the EU."
+    recorded_answer: "Primary storage is in the eu-central region. Backups stay in the EU."
+    tags:
+      - "privacy"

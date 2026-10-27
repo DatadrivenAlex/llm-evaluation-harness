@@ -1,0 +1,237 @@
+{
+  "dataset": "datasets/rag_faq.jsonl",
+  "generated_at": "2026-10-27T12:29:35+00:00",
+  "version": "0.1.0",
+  "thresholds": {
+    "min_pass_rate": 0.8,
+    "min_token_f1": 0.5,
+    "min_faithfulness": 0.6,
+    "max_hallucination_rate": 0.2,
+    "require_exact_match": false
+  },
+  "summary": {
+    "cases": 8,
+    "passed": 8,
+    "pass_rate": 1.0,
+    "exact_match": 0.875,
+    "token_f1": 0.9836956521739131,
+    "soft_overlap": 0.9711538461538461,
+    "faithfulness": 1.0,
+    "hallucination_rate": 0.0
+  },
+  "gate": {
+    "passed": true,
+    "reasons": []
+  },
+  "cases": [
+    {
+      "id": "password-reset",
+      "question": "How do I reset my password?",
+      "answer": "Password reset links expire after 30 minutes. Request a new link from the sign-in page.",
+      "expected_answer": "Password reset links expire after 30 minutes. Request a new link from the sign-in page.",
+      "expected_facts": [
+        "Password reset links expire after 30 minutes."
+      ],
+      "context": [
+        "Password reset links expire after 30 minutes.",
+        "Request a new link from the sign-in page."
+      ],
+      "tags": [
+        "account"
+      ],
+      "passed": true,
+      "reasons": [],
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "soft_overlap": 1.0,
+        "faithfulness": 1.0,
+        "hallucination": false,
+        "unsupported_entities": []
+      }
+    },
+    {
+      "id": "free-plan",
+      "question": "What does the Free plan include?",
+      "answer": "The Free plan comes with 3 notebooks and 50 MB of attachments.",
+      "expected_answer": "The Free plan includes 3 notebooks and 50 MB of attachments.",
+      "expected_facts": [
+        "The Free plan includes 3 notebooks and 50 MB of attachments."
+      ],
+      "context": [
+        "The Free plan includes 3 notebooks and 50 MB of attachments."
+      ],
+      "tags": [
+        "billing"
+      ],
+      "passed": true,
+      "reasons": [],
+      "metrics": {
+        "exact_match": 0.0,
+        "token_f1": 0.8695652173913043,
+        "soft_overlap": 0.7692307692307693,
+        "faithfulness": 1.0,
+        "hallucination": false,
+        "unsupported_entities": []
+      }
+    },
+    {
+      "id": "sso",
+      "question": "Which plans include SSO?",
+      "answer": "SAML SSO is available on the Team plan. OIDC is available on the Enterprise plan.",
+      "expected_answer": "SAML SSO is available on the Team plan. OIDC is available on the Enterprise plan.",
+      "expected_facts": [
+        "SAML SSO is available on the Team plan.",
+        "OIDC is available on the Enterprise plan."
+      ],
+      "context": [
+        "SAML SSO is available on the Team plan.",
+        "OIDC is available on the Enterprise plan."
+      ],
+      "tags": [
+        "security"
+      ],
+      "passed": true,
+      "reasons": [],
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "soft_overlap": 1.0,
+        "faithfulness": 1.0,
+        "hallucination": false,
+        "unsupported_entities": []
+      }
+    },
+    {
+      "id": "export",
+      "question": "How do I export my notes?",
+      "answer": "Open Settings, choose Export, and download a ZIP of markdown files. Exports are ready within 1 hour.",
+      "expected_answer": "Open Settings, choose Export, and download a ZIP of markdown files. Exports are ready within 1 hour.",
+      "expected_facts": [
+        "Exports are ready within 1 hour."
+      ],
+      "context": [
+        "Open Settings, choose Export, and download a ZIP of markdown files.",
+        "Exports are ready within 1 hour."
+      ],
+      "tags": [
+        "data"
+      ],
+      "passed": true,
+      "reasons": [],
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "soft_overlap": 1.0,
+        "faithfulness": 1.0,
+        "hallucination": false,
+        "unsupported_entities": []
+      }
+    },
+    {
+      "id": "support-hours",
+      "question": "When is email support available?",
+      "answer": "Email support runs Monday to Friday, 09:00 to 17:00 UTC. Enterprise customers also get weekend chat.",
+      "expected_answer": "Email support runs Monday to Friday, 09:00 to 17:00 UTC. Enterprise customers also get weekend chat.",
+      "expected_facts": [
+        "Email support runs Monday to Friday, 09:00 to 17:00 UTC."
+      ],
+      "context": [
+        "Email support runs Monday to Friday, 09:00 to 17:00 UTC.",
+        "Enterprise customers also get weekend chat."
+      ],
+      "tags": [
+        "support"
+      ],
+      "passed": true,
+      "reasons": [],
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "soft_overlap": 1.0,
+        "faithfulness": 1.0,
+        "hallucination": false,
+        "unsupported_entities": []
+      }
+    },
+    {
+      "id": "trash",
+      "question": "How long are deleted notes recoverable?",
+      "answer": "Deleted notes stay in Trash for 14 days.",
+      "expected_answer": "Deleted notes stay in Trash for 14 days.",
+      "expected_facts": [
+        "Deleted notes stay in Trash for 14 days."
+      ],
+      "context": [
+        "Deleted notes stay in Trash for 14 days and are then permanently removed."
+      ],
+      "tags": [
+        "data"
+      ],
+      "passed": true,
+      "reasons": [],
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "soft_overlap": 1.0,
+        "faithfulness": 1.0,
+        "hallucination": false,
+        "unsupported_entities": []
+      }
+    },
+    {
+      "id": "rate-limit",
+      "question": "What is the API rate limit?",
+      "answer": "The public API allows 60 requests per minute per token. Burst traffic may receive HTTP 429.",
+      "expected_answer": "The public API allows 60 requests per minute per token. Burst traffic may receive HTTP 429.",
+      "expected_facts": [
+        "The public API allows 60 requests per minute per token."
+      ],
+      "context": [
+        "The public API allows 60 requests per minute per token.",
+        "Burst traffic may receive HTTP 429."
+      ],
+      "tags": [
+        "api"
+      ],
+      "passed": true,
+      "reasons": [],
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "soft_overlap": 1.0,
+        "faithfulness": 1.0,
+        "hallucination": false,
+        "unsupported_entities": []
+      }
+    },
+    {
+      "id": "storage-region",
+      "question": "Where is my data stored?",
+      "answer": "Primary storage is in the eu-central region. Backups stay in the EU.",
+      "expected_answer": null,
+      "expected_facts": [
+        "Primary storage is in the eu-central region.",
+        "Backups stay in the EU."
+      ],
+      "context": [
+        "Primary storage is in the eu-central region.",
+        "Backups stay in the EU."
+      ],
+      "tags": [
+        "privacy"
+      ],
+      "passed": true,
+      "reasons": [],
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "soft_overlap": 1.0,
+        "faithfulness": 1.0,
+        "hallucination": false,
+        "unsupported_entities": []
+      }
+    }
+  ],
+  "failures": []
+}
